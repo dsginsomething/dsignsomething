@@ -38,7 +38,7 @@
                         <div class="item">
                         E-NEWS LETTER
                         </div>
-                        <div class="item divided">
+                        <div class="item">
                         ABOUT US
                         </div>
                     </div>

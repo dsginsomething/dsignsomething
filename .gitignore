@@ -1,2 +1,4 @@
-src/*
-!src/wp-content/themes/dsignsomething/*
+src/plugins/akismet
+src/themes/twentyfifteen
+src/themes/twentyseventeen
+src/themes/twentysixteen

@@ -10,7 +10,7 @@ services:
       WORDPRESS_DB_USER: root
       WORDPRESS_DB_PASSWORD: dsignsomethingdev
     volumes:
-    - ./src:/var/www/html
+    - ./src:/var/www/html/wp-content
   mysql:
     image: mariadb
     environment:

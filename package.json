@@ -1,0 +1,22 @@
+{
+  "name": "dsignsomething-wordpress",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build-semantic": "cd semantic && gulp build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dsginsomething/dsignsomething.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dsginsomething/dsignsomething/issues"
+  },
+  "homepage": "https://github.com/dsginsomething/dsignsomething#readme",
+  "devDependencies": {
+    "semantic-ui": "^2.2.9"
+  }
+}

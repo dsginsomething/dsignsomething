@@ -2,3 +2,7 @@ src/plugins/akismet
 src/themes/twentyfifteen
 src/themes/twentyseventeen
 src/themes/twentysixteen
+
+node_modules/
+
+semantic/dist

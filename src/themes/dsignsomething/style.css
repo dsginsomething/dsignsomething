@@ -1,3 +1,4 @@
+/* Footer */
 .text {
   font-weight: 300 !important;
 }
@@ -14,4 +15,27 @@
 
 .footer-menu a {
     color: white !important;
+}
+/* header */ 
+.r-margin {
+  margin: 0 1rem !important;
+}
+
+.top-menu {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin: 0 1rem !important;
+}
+
+.social {
+  padding: 0.5em !important;
+  background-color: #979797 !important;
+}
+.social > .icon {
+  font-size: 1.2rem !important;
+  color: white !important;
+}
+.social:hover {
+  background-color: #cccccc !important;
 }

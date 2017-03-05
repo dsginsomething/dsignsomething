@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "clean-semantic": "cd semantic && gulp clean",
     "build-semantic": "cd semantic && gulp build"
   },
   "repository": {

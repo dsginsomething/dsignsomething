@@ -350,8 +350,11 @@
 --------------------*/
 
 /* For source only. Modified in gulp for dist */
-@imagePath : '../../themes/default/assets/images';
-@fontPath  : '../../themes/default/assets/fonts';
+/* @imagePath : '../../themes/default/asssssets/images';
+@fontPath  : '../../themes/default/asssssets/fonts'; */
+
+@imagePath : '../../dsignsomething/images';
+@fontPath  : '../../dsignsomething/fonts';
 
 /*-------------------
        Em Sizes

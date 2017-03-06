@@ -39,3 +39,18 @@
 .social:hover {
   background-color: #cccccc !important;
 }
+
+/* article homepage */
+.spotlight {
+  font-size: 4rem !important;
+  font-weight: lighter !important;
+}
+
+.underline {
+  border-top: 4px solid !important;
+  border-bottom: 0;
+}
+
+.lightHeader {
+  font-weight: lighter !important;
+}

@@ -43,7 +43,7 @@
                     <div class="ui grid centered aligned">
                         <div class="row">
                             <div class="column">
-                            <div class="ui vertical rectangle test ad" data-text="Advertisement" style={{width: `100%`, height: `700px`}}></div>
+                                <div class="ui vertical rectangle test ad" data-text="Advertisement" style="width: 100%; height: 700px; margin-bottom: 20px;"></div>
                             </div>
                         </div>
                     </div>

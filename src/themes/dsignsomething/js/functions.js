@@ -1,20 +1,14 @@
 jQuery(document).ready(function($) {
-    console.log("hello");
-    $(".owl-carousel").owlCarousel({
-    loop:true,
-    margin:10,
-    nav:true,
-    responsive:{
-        0:{
-            items:3
-        },
-        600:{
-            items:9
-        },
-        1000:{
-            items:12
-        }
+  $('.ui.embed').embed();
+  $(".owl-carousel").owlCarousel({
+    loop: true,
+    nav: true,
+    dots: false,
+    responsive: {
+      0: { items: 4 },
+      600: { items: 8 },
+      1000: { items: 16 }
     },
-    navText: ["<i class='ui icon left angle'></i>","<i class='ui icon right angle'></i>"],
-});
+    navText: ["<i class='ui icon left angle basic'></i>","<i class='ui icon right angle basic'></i>"]
+  });
 });

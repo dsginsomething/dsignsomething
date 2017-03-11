@@ -12,6 +12,13 @@ function dsignsomething_scripts_styles() {
 
     // Load semantic-ui script
     wp_enqueue_script( 'semantic', get_template_directory_uri() . '/custom-semantic/semantic.min.js', array( 'jquery' ));
+
+	wp_enqueue_style( 'owlcss', get_template_directory_uri().'/styles/owlcarousel/owl.carousel.min.css');
+	
+	wp_enqueue_style( 'owltheme', get_template_directory_uri().'/styles/owlcarousel/owl.theme.default.min.css');
+
+	wp_enqueue_script( 'owljs', get_template_directory_uri().'/js/owlcarousel/owl.carousel.min.js', array( 'jquery' ));
+	
 }
 
 add_action( 'wp_enqueue_scripts', 'dsignsomething_scripts_styles' );

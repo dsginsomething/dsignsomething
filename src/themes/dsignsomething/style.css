@@ -154,3 +154,32 @@ a.header:hover {
   width: 100%;
   min-height: 300px;
 }
+
+.owl-carousel {
+  position: relative;
+}
+
+.owl-prev,
+.owl-next {
+  background: none !important;
+  color: rgba(0,0,0,.87) !important;
+  font-size: 2.5rem !important;
+
+  position: absolute;
+  top: 0%;
+  margin-top: -10px; // Half of the prev/next buttons height here in negatives to center them perfectly
+}
+
+.owl-prev {
+  left: 0;
+  margin-left: -1.5rem !important;
+}
+
+.owl-next {
+  right: 0;
+  margin-right: -1.5rem !important;
+}
+
+.owl-stage-outer {
+  margin: 0 2rem !important;
+}

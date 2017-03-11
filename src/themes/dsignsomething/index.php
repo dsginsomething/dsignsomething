@@ -23,12 +23,47 @@
                             <div class="ui divider underline"></div>
                         </div>
                     </div>
-                    <div id="primary" class="content-area">
-                        <main id="main" class="site-main" role="main">
+                    <div class="ui stackable grid">
                         <?php
+                            $i = 0;
+                            $is_show_equal = false;
+                            $dsignsomething_is_single = 0;
                             while ( have_posts() ) : the_post();
-                                get_template_part( 'content', get_post_format() );
+                                $i++;
+                                if ( $i == 3 || $i == 7 ) :
+                                    $is_show_equal = true;
+                                    echo "<div class=\"equal width row\">";
+                                endif;
+                                switch($i) {
+                                    case 1:
+                                    case 2:
+                                        include(locate_template('content-list.double.php'));
+                                    break;
+                                    case 3:
+                                    case 4:
+                                    case 7:
+                                    case 8:
+                                        $dsignsomething_is_single = false;
+                                        include(locate_template('content-list.triple.php'));
+                                    break;
+                                    case 9:
+                                    case 5:
+                                        include(locate_template('content-list.triple.php'));
+                                        if ( $is_show_equal ) :
+                                            $is_show_equal = false;
+                                            echo "</div>";
+                                        endif;
+                                    break;
+                                    default:
+                                        $dsignsomething_is_single = true;
+                                        include(locate_template('content-list.single.php'));
+                                    break;
+                                }
                             endwhile;
+                            if ( $is_show_equal ) :
+                                $is_show_equal = false;
+                                echo "</div>";
+                            endif;
 
                             the_posts_pagination( array(
                                 'prev_text'          => __( 'Previous page', 'twentyfifteen' ),
@@ -36,7 +71,6 @@
                                 'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'twentyfifteen' ) . ' </span>',
                             ) );
                         ?>
-                        </main>
                     </div>
                 </div>
                 <div class="five wide column">

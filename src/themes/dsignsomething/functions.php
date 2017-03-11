@@ -23,6 +23,18 @@ function dsignsomething_scripts_styles() {
 
 add_action( 'wp_enqueue_scripts', 'dsignsomething_scripts_styles' );
 
+// Custom Image Component
+function dsignsomething_image($url, $height) {
+	echo sprintf("<div class='custom-image' style='height: %s px;background-image: url(%s);'></div>", $height, $url);
+}
+
+// Custom Content for Home Page
+add_filter("the_content", "plugin_content_filter");
+
+function plugin_content_filter($content)
+{
+	return substr($content, 0, 50);
+}
 
 // Custom Logo Theme
 $args = array(
@@ -32,29 +44,7 @@ $args = array(
 );
 add_theme_support( 'custom-header', $args );
 
+// Enable Thumbnail
+add_theme_support( 'post-thumbnails' );
 
-if ( ! function_exists( 'twentyfifteen_post_thumbnail' ) ) :
-function twentyfifteen_post_thumbnail() {
-	if ( post_password_required() || is_attachment() || ! has_post_thumbnail() ) {
-		return;
-	}
-
-	if ( is_singular() ) :
-	?>
-
-	<div class="post-thumbnail">
-		<?php the_post_thumbnail(); ?>
-	</div><!-- .post-thumbnail -->
-
-	<?php else : ?>
-
-	<a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true">
-		<?php
-			the_post_thumbnail( 'post-thumbnail', array( 'alt' => get_the_title() ) );
-		?>
-	</a>
-
-	<?php endif; // End is_singular()
-}
-endif;
 ?>

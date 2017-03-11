@@ -27,7 +27,7 @@
                         <?php
                             $i = 0;
                             $is_show_equal = false;
-                            $dsignsomething_is_single = 0;
+                            $dsignsomething_is_single = false;
                             while ( have_posts() ) : the_post();
                                 $i++;
                                 if ( $i == 3 || $i == 7 ) :
@@ -37,18 +37,18 @@
                                 switch($i) {
                                     case 1:
                                     case 2:
-                                        include(locate_template('content-list.double.php'));
+                                        include(locate_template('content-list.double.php', false, false));
                                     break;
                                     case 3:
                                     case 4:
                                     case 7:
                                     case 8:
                                         $dsignsomething_is_single = false;
-                                        include(locate_template('content-list.triple.php'));
+                                        include(locate_template('content-list.triple.php', false, false));
                                     break;
                                     case 9:
                                     case 5:
-                                        include(locate_template('content-list.triple.php'));
+                                        include(locate_template('content-list.triple.php', false, false));
                                         if ( $is_show_equal ) :
                                             $is_show_equal = false;
                                             echo "</div>";
@@ -56,7 +56,7 @@
                                     break;
                                     default:
                                         $dsignsomething_is_single = true;
-                                        include(locate_template('content-list.single.php'));
+                                        include(locate_template('content-list.single.php', false, false));
                                     break;
                                 }
                             endwhile;

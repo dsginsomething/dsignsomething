@@ -1,4 +1,3 @@
-<!--<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> class="card">-->
 <div class="card">
 	<div class="image">
 		<?php
@@ -27,4 +26,3 @@
 	</div>
 	<div class="ui divider"></div>
 </div>
-<!--</article>-->

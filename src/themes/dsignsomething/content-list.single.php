@@ -1,3 +1,3 @@
 <div class="sixteen wide column">
-	<?php get_template_part( 'content-list.item' ); ?>
+	<?php include(locate_template( 'content-list.item.php' )); ?>
 </div>

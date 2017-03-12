@@ -4,6 +4,8 @@ src/themes/twentyfifteen
 src/themes/twentyseventeen
 src/themes/twentysixteen
 
+src/uploads
+
 node_modules/
 
 semantic/dist

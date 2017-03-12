@@ -47,4 +47,7 @@ add_theme_support( 'custom-header', $args );
 // Enable Thumbnail
 add_theme_support( 'post-thumbnails' );
 
+// Custom Function
+include(locate_template('/inc/custom-functions.php'));
+
 ?>

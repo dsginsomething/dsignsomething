@@ -183,3 +183,48 @@ a.header:hover {
 .owl-stage-outer {
   margin: 0 2rem !important;
 }
+
+/* Content Page */
+.lightHeader {
+  font-weight: lighter !important;
+  font-size: 3rem !important;
+}
+.lightHeaderThai{
+  font-weight: lighter !important;
+}
+
+.single.content .box {
+  position: absolute;
+  bottom: -8.5rem;
+  background: #ffffff;
+  z-index: 10000;
+  color: black;
+  padding: 15px 30px 5px 0;
+  font-size: 3rem;
+  max-width: 50%;
+}
+
+.single.content + .content > .subcontent {
+  margin-top: 6.5rem !important;
+}
+
+.single.content .box > .title {
+  width: 100%;
+  line-height: 3.5rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.single.content .box > .title > .thai {
+  max-width: 70%;
+}
+
+.single.content .box > .meta {
+  color: rgba(0,0,0,0.5 7);
+  line-height: 1rem;
+}
+
+.single.content .box > .divider {
+  width: 50%;
+}

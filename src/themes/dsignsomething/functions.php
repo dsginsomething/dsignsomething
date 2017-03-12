@@ -33,7 +33,11 @@ add_filter("the_content", "plugin_content_filter");
 
 function plugin_content_filter($content)
 {
-	return substr($content, 0, 50);
+	if ( is_single() ) :
+		return $content;
+	else :
+		return substr($content, 0, 50);
+	endif;
 }
 
 // Custom Logo Theme

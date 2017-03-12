@@ -18,4 +18,9 @@ function dsignsomething_right_bar() {
     </div>
 <?php
 }
+
+function default_thumbnail() {
+    return get_template_directory_uri()."/images/default-thumbnail.jpg";
+}
+
 ?>

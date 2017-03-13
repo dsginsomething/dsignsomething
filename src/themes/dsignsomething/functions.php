@@ -25,7 +25,7 @@ add_action( 'wp_enqueue_scripts', 'dsignsomething_scripts_styles' );
 
 // Custom Image Component
 function dsignsomething_image($url, $height) {
-	echo sprintf("<div class='custom-image' style='height: %s px;background-image: url(%s);'></div>", $height, $url);
+	echo sprintf("<div class='custom-image' style='min-height: %s;background-image: url(%s);'></div>", $height, $url);
 }
 
 // Custom Content for Home Page

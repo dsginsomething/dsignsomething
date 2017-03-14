@@ -74,3 +74,34 @@ function dsignsomething_create_nav_menu() {
     }
 }
 ?>
+
+function custom_comments( $comment, $args, $depth ) {
+    $GLOBALS['comment'] = $comment;
+    switch( $comment->comment_type ) :
+        case 'pingback' :
+        case 'trackback' : ?>
+            <li <?php comment_class(); ?> id="comment<?php comment_ID(); ?>">
+            <div class="back-link">< ?php comment_author_link(); ?></div>
+        <?php break;
+        default : ?>
+        <div class="comment" <?php comment_class(); ?> id="comment-<?php comment_ID(); ?>">
+          <a class="avatar">
+            <?php echo get_avatar( $comment, 100 ); ?>
+          </a>
+          <div class="content">
+            <a class="author"><?php comment_author(); ?></a>
+            <div class="text">
+              <?php comment_text(); ?>
+            </div>
+            <div class="actions">
+              <a class="reply">Reply</a>
+              <span class="date"><?php comment_date(); ?> <?php comment_time(); ?></span>
+            </div>
+          </div>
+        </div>
+        <?php // End the default styling of comment
+        break;
+    endswitch;
+}
+
+?>

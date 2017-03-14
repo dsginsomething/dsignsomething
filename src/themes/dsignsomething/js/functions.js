@@ -5,17 +5,17 @@ jQuery(document).ready(function($) {
     center: true,
     nav: true,
     dots: false,
-    stageOuterClass: "dview-stageOuter",
-    navClass: ["owl-prev dview-prev", "owl-next dview-next"],
+    stageOuterClass: "dview-stage-outer",
+    navContainerClass: "custom-nav-container",
+    navClass: ["dview-prev", "dview-next"],
     responsive: {
       0: { items: 2 },
       200: { items: 4 },
       400: { items: 6 },
       600: { items: 8 },
-      800: { items: 10},
-      1200: { items: 12 }
+      800: { items: 11}
     },
-    navText: ["<i class='ui icon left angle basic'></i>","<i class='ui icon right angle basic'></i>"]
+    navText: ["<i class='ui icon grey left angle big'></i>","<i class='ui icon grey right angle big'></i>"]
   });
   $(".dsigner-carousel").owlCarousel({
     nav: true,

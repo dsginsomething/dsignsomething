@@ -1,12 +1,12 @@
 <div class="row">
-  <form role="search" action="<?php echo site_url('/'); ?>" method="get" id="searchform" class="#searchform ui form">
+  <form role="search" action="<?php echo get_permalink(); ?>" method="get" id="searchform" class="#searchform ui form">
     <div class="fields">
-      <div class="two wide field">
-        <button type="submit" name="submit" value="" class="huge ui icon button circular grey">
-          <span style="">ALL<i style="overflow: hidden;" class="ui icon at"></i></span>
+      <div class="field">
+        <button type="submit" name="tags" value="all" class="huge ui icon button circular custom grey">
+          <span class="all">ALL</span><i class="ui icon empty"></i>
         </button>
       </div>
-      <div class="fourteen wide field">
+      <div class="field" style="width: 100%;padding-right: 4rem;">
         <div class="owl-carousel dview-carousel owl-theme">
           <?php
             $x = 1;

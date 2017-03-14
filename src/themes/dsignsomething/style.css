@@ -180,38 +180,32 @@ a.header:hover {
   position: relative;
 }
 
-.owl-prev,
-.owl-next {
-  background: none !important;
-  color: rgba(0,0,0,.87) !important;
-  font-size: 2.5rem !important;
-  position: absolute;
-  top: 0%;
-  margin-top: -10px;
+.dview-prev,
+.dview-next {
+  display: flex;
+  align-items: center;
 }
 
 .dview-prev {
-  left: 0;
-  margin-left: -1.5rem !important;
 }
 
 .dview-next {
-  right: 0;
-  margin-right: -1.5rem !important;
 }
 
 .dsigner-prev {
   left: 0;
-  margin-left: -0.5rem !important;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
 .dsigner-next {
   right: 0;
-  margin-right: -0.8rem !important;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
-.dview-stageOuter {
-  margin: 0 2rem !important;
+.dview-stage-outer {
+  margin: 0 3rem !important;
   overflow: hidden;
   position: relative;
 }
@@ -220,6 +214,22 @@ a.header:hover {
   margin: 0 2.7rem !important;
   overflow: hidden;
   position: relative;
+}
+
+.custom-nav-container {
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.custom-nav-container i.big.icon {
+  font-size: 3rem !important;
 }
 
 /* Content Page */
@@ -265,4 +275,11 @@ a.header:hover {
 
 .single.content .box > .divider {
   width: 50%;
+}
+
+.ui.circular.button.custom > .all {
+  position: fixed;
+  font-size: 1rem;
+  font-weight: 100;
+  margin-left: -0.2rem;
 }

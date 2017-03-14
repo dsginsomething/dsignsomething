@@ -2,28 +2,22 @@
         <div class="footer">
             <div class="ui tertiary inverted vertical footer segment">
                 <div class="ui container">
-                    <div class="ui text menu grid footer-menu">
-                        <a class="item four wide column middle aligned">
-                            DSIGNER DIRECTORY
-                        </a>
-                        <a class="item one wide column middle aligned">
-                            DTALK
-                        </a>
-                        <a class="item two wide column middle aligned">
-                            DWELL
-                        </a>
-                        <a class="item one wide column middle aligned">
-                            DVIEW
-                        </a>
-                        <a class="item four wide column middle aligned">
-                            SOMETHINGS NEWS
-                        </a>
-                        <a class="item two wide column middle aligned">
-                            LET'S SAY
-                        </a>
-                        <a class="item two wide column">
-                            Q&A
-                        </a>
+                    <div class="ui grid text">
+                        <div class="two wide column">
+                        </div>
+                        <div class="twelve wide column">
+                            <?php 
+                                wp_nav_menu( array(
+                                    'menu' => 'main-menu',
+                                    'container_class' => 'ui text menu top-menu',
+                                    'menu_class' => 'item',
+                                    'items_wrap' => '%3$s',
+                                    'walker' => new Dsignsomething_Walker_Main_Menu()
+                                )); 
+                            ?>
+                        </div>
+                        <div class="two wide column">
+                        </div>
                     </div>
                 </div>
             </div>

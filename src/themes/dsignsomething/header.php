@@ -53,32 +53,15 @@
                             </div>
                             <div class="ui divider r-margin"></div>
                             <div class="row">
-                                <div class="ui text menu top-menu">
-                                    <Link to={`/`} class="item">
-                                        HOME
-                                    </Link>
-                                    <Link to={`/dsigner`} class="item">
-                                        DSIGNER DIRECTORY
-                                    </Link>
-                                    <Link to={`/dtalk`} class="item">
-                                        DTALK
-                                    </Link>
-                                    <Link to={`/dwell`} class="item">
-                                        DWELL
-                                    </Link>
-                                    <Link to={`/dview`} class="item">
-                                        DVIEW
-                                    </Link>
-                                    <Link to={`/somethings`} class="item">
-                                        SOMETHINGS NEWS
-                                    </Link>
-                                    <Link to={`/lets`} class="item">
-                                        LET'S SAY
-                                    </Link>
-                                    <Link to={`/qa`} class="item">
-                                        Q&A
-                                    </Link>
-                                </div>
+                                <?php 
+                                wp_nav_menu( array(
+                                    'menu' => 'main-menu',
+                                    'container_class' => 'ui text menu top-menu',
+                                    'menu_class' => 'item',
+                                    'items_wrap' => '%3$s',
+                                    'walker' => new Dsignsomething_Walker_Main_Menu()
+                                )); 
+                                ?>
                             </div>
                         </div>
                     </div>

@@ -54,4 +54,9 @@ add_theme_support( 'post-thumbnails' );
 // Custom Function
 include(locate_template('/inc/custom-functions.php'));
 
+include(locate_template('/inc/Dsignsomething_Walker_Main_Menu.php'));
+
+// Create Nav Menu
+
+dsignsomething_create_nav_menu();
 ?>

@@ -40,10 +40,7 @@
                                     </button>
                                 </div>
                                 <div class="four wide column">
-                                    <div class="ui small transparent icon input">
-                                        <input type="text" placeholder="SEARCH" />
-                                        <i class="search icon"></i>
-                                    </div>
+                                    <?php get_search_form(); ?>
                                 </div>
                                 <div class="four wide column right aligned">
                                     <button class="ui basic button">
@@ -59,6 +56,7 @@
                                     'container_class' => 'ui text menu top-menu',
                                     'menu_class' => 'item',
                                     'items_wrap' => '%3$s',
+                                    'theme_location' => 'header-menu',
                                     'walker' => new Dsignsomething_Walker_Main_Menu()
                                 )); 
                                 ?>

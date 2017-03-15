@@ -23,6 +23,15 @@ function dsignsomething_scripts_styles() {
 
 add_action( 'wp_enqueue_scripts', 'dsignsomething_scripts_styles' );
 
+// Add Menu
+function register_my_menu() {
+  	register_nav_menus(array(
+		'header-menu' => __( 'Main Menu' )
+		// 'extra-menu' => __( 'Extra Menu' )
+	));
+}
+add_action( 'init', 'register_my_menu' );
+
 // Custom Image Component
 function dsignsomething_image($url, $height) {
 	echo sprintf("<div class='custom-image' style='min-height: %s;background-image: url(%s);'></div>", $height, $url);
@@ -47,6 +56,9 @@ $args = array(
 	'default-image' => get_template_directory_uri() . '/images/logo.jpg',
 );
 add_theme_support( 'custom-header', $args );
+
+// Enable Gallery
+add_theme_support( 'post-formats', array( 'gallery' ) );
 
 // Enable Thumbnail
 add_theme_support( 'post-thumbnails' );

@@ -21,7 +21,8 @@ jQuery(document).ready(function($) {
     nav: true,
     dots: false,
     stageOuterClass: "dsigner-stageOuter",
-    navClass: ["owl-prev dsigner-prev", "owl-next dsigner-next"],
+    navClass: ["dsigner-prev", "dsigner-next"],
+    navContainerClass: "custom-nav-container",
     responsive:{
       0: { items: 3 },
       200: { items: 6 },
@@ -30,7 +31,7 @@ jQuery(document).ready(function($) {
       800: { items: 12},
       1200: { items: 15 }
     },
-    navText: ["<a class='ui button basic icon'><i class='ui icon left angle basic'></i></a>",
-    "<a class='ui button basic icon'><i class='ui icon right angle basic'></i></a>"]
+    navText: ["<a class='ui button basic icon' style='padding-left: 0.4rem !important; padding-right: 0.4rem !important;'><i class='ui icon left angle grey'></i></a>",
+    "<a class='ui button basic icon'style='padding-left: 0.4rem !important; padding-right: 0.4rem !important;'><i class='ui icon right angle grey'></i></a>"]
   });
 });

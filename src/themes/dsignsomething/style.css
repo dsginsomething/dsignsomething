@@ -186,22 +186,10 @@ a.header:hover {
   align-items: center;
 }
 
-.dview-prev {
-}
-
-.dview-next {
-}
-
-.dsigner-prev {
-  left: 0;
-  margin: 0 !important;
-  padding: 0 !important;
-}
-
+.dsigner-prev,
 .dsigner-next {
-  right: 0;
-  margin: 0 !important;
-  padding: 0 !important;
+  display: flex;
+  align-items: center;
 }
 
 .dview-stage-outer {

@@ -1,16 +1,35 @@
 jQuery(document).ready(function($) {
   $('.ui.embed').embed();
+
+  const mostFamous = $('.most-famous')
+  mostFamous.owlCarousel({
+    loop: true,
+    margin: 0,
+    nav: false,
+    dots: false,
+    responsive:{
+      0:{
+          items: 6
+      }
+    }
+  })
+  $('.most-famous-control .next').on('click', function () {
+    mostFamous.trigger('next.owl.carousel')
+  })
+  $('.most-famous-control .prev').on('click', function () {
+    mostFamous.trigger('prev.owl.carousel')
+  })
   
   const homepageHilight = $('.homepage-owl')
   homepageHilight.owlCarousel({
     loop: true,
     margin: 0,
     nav: false,
-    autoplay: false,
+    autoplay: true,
     autoplayTimeout: 8000,
     autoplayHoverPause: true,
     dots: false,
-    merge:true,
+    merge: true,
     stageOuterClass: "stage-outer",
     navClass: ["owl-home-prev", "owl-home-next"],
     responsive:{

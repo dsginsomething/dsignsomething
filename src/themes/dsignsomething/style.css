@@ -312,6 +312,48 @@ a.header:hover {
   background: rgba(255, 255, 255, 0.5);
 }
 
+.most.famous .line {
+  border-top: 3px solid;
+  width: 30%;
+}
+
+.most-famous .owl-item .item div {
+  height: 80px;
+  background-size: cover;
+  background-position: center;
+}
+
+.most-famous .active:not(:first-child):not(:last-child) .item div {
+  margin-right: 5px;
+}
+
+.most-famous-control {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+  align-items: center;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.most-famous-control .next, .most-famous-control .prev {
+  z-index: 1;
+  width: 50px;
+  height: 80px;
+  background: rgba(255,255,255,0.8);
+  display: flex;
+  align-items: center;
+  pointer-events: auto;
+  cursor: pointer;
+}
+
 .owl-carousel {
   position: relative;
 }

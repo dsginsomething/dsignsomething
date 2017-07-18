@@ -37,6 +37,19 @@ function dsignsomething_image($url, $height) {
 	echo sprintf("<div class='custom-image' style='min-height: %s;background-image: url(%s);'></div>", $height, $url);
 }
 
+// Get Image from media library
+function get_images_from_media_library() {
+	$img = array(
+			'post_type' => 'attachment',
+			'post_mime_type' =>'image',
+			'post_status' => 'inherit',
+			'posts_per_page' => 10,
+			'orderby' => 'rand'
+	);
+	$query_images = new WP_Query( $img );
+	return $query_images->posts;
+}
+
 // Custom Content for Home Page
 add_filter("the_content", "plugin_content_filter");
 

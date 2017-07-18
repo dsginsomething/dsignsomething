@@ -12,56 +12,61 @@
         <div class="ui basic segment">
             <div class="ui container">
                 <div class="ui grid">
-                    <div class="three wide column">
-                        <a href="/" >
-                            <img class="ui medium image" src="<?php header_image(); ?>" />
-                        </a>
-                    </div>
-                    <div class="thirteen wide column middle aligned">
-                        <div class="ui grid centered middle aligned internally">
-                            <div class="row">
-                                <div class="five wide column right aligned">
-                                    <div class="ui horizontal divided list">
-                                        <div class="item">
-                                            E-NEWS LETTER
-                                        </div>
-                                        <div class="ui vertical divider"></div>
-                                        <div class="item">
-                                            ABOUT US
+                    <div class="row">
+                        <div class="three wide column">
+                            <a href="/" >
+                                <img class="ui medium image" src="<?php header_image(); ?>" />
+                            </a>
+                        </div>
+                        <div class="thirteen wide column middle aligned">
+                            <div class="ui grid centered middle aligned internally">
+                                <div class="row">
+                                    <div class="five wide column right aligned">
+                                        <div class="ui horizontal divided list">
+                                            <div class="item">
+                                                E-NEWS LETTER
+                                            </div>
+                                            <div class="ui vertical divider"></div>
+                                            <div class="item">
+                                                ABOUT US
+                                            </div>
                                         </div>
                                     </div>
+                                    <div class="three wide column">
+                                        <button class="ui circular facebook icon button social">
+                                            <i class="facebook f icon"></i>
+                                        </button>
+                                        <button class="ui circular icon button social">
+                                            <i class="instagram icon"></i>
+                                        </button>
+                                    </div>
+                                    <div class="four wide column">
+                                        <?php get_search_form(); ?>
+                                    </div>
+                                    <div class="four wide column right aligned">
+                                        <button class="ui basic button">
+                                            SIGN IN
+                                        </button>
+                                    </div>
                                 </div>
-                                <div class="three wide column">
-                                    <button class="ui circular facebook icon button social">
-                                        <i class="facebook f icon"></i>
-                                    </button>
-                                    <button class="ui circular icon button social">
-                                        <i class="instagram icon"></i>
-                                    </button>
+                                <div class="ui divider r-margin"></div>
+                                <div class="row">
+                                    <?php 
+                                    wp_nav_menu( array(
+                                        'menu' => 'main-menu',
+                                        'container_class' => 'ui text menu top-menu',
+                                        'menu_class' => 'item',
+                                        'items_wrap' => '%3$s',
+                                        'theme_location' => 'header-menu',
+                                        'walker' => new Dsignsomething_Walker_Main_Menu()
+                                    )); 
+                                    ?>
                                 </div>
-                                <div class="four wide column">
-                                    <?php get_search_form(); ?>
-                                </div>
-                                <div class="four wide column right aligned">
-                                    <button class="ui basic button">
-                                        SIGN IN
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="ui divider r-margin"></div>
-                            <div class="row">
-                                <?php 
-                                wp_nav_menu( array(
-                                    'menu' => 'main-menu',
-                                    'container_class' => 'ui text menu top-menu',
-                                    'menu_class' => 'item',
-                                    'items_wrap' => '%3$s',
-                                    'theme_location' => 'header-menu',
-                                    'walker' => new Dsignsomething_Walker_Main_Menu()
-                                )); 
-                                ?>
                             </div>
                         </div>
+                    </div>
+                    <div class="row">
+                        <?php include(locate_template('most-famous.php', false, false)); ?>
                     </div>
                 </div>
             </div>

@@ -18,10 +18,10 @@
                     </div>
                     <div class="ui stackable grid">
                         <?php
-                            $tag = ($_GET["tag"] == "all") ? "" : $_GET["tag"] ;
+                            $well = ($_GET["well"] == "all") ? "" : $_GET["well"] ;
                             $wp_query = new WP_Query(array(
                                 'category_name' => 'dwell',
-                                'tag' => $tag
+                                'tag' => $well
                             ));
                             $is_show = false;
                             while ( $wp_query->have_posts() ) : $wp_query->the_post();

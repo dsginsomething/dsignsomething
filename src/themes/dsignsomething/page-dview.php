@@ -10,7 +10,7 @@
                 <div class="eleven wide column">
                     <div class="ui grid">
                         <div class="sixteen wide column">
-                            <h1 class="ui header dividing spotlight">D<span class="disabled">WELL</span></h1>
+                            <h1 class="ui header dividing spotlight">D<span class="disabled">VIEW</span></h1>
                         </div>
                         <div class="sixteen wide column">
                             <?php get_template_part('custom-search/dview', 'search'); ?>

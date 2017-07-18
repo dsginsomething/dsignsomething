@@ -19,9 +19,36 @@ if( $dsignsomething_is_single_right ) :
 				</div>
 				<div class="item">
 					<?php echo get_the_category()[0]->name; ?>
-				</div>
+					
+				</div>	
 			</div>
+			<?php
+				$categoryName = get_the_category()[0]->name;
+				$tags = get_the_tags();
+				if(is_array($tags)){
+					if($categoryName == "dwell"){
+						foreach ( $tags as $tag ) {
+							$tagname = $tag->name;
+							if( $tagname == "international" || $tagname == "Thai"){
+								echo "<div class=\"item\">".$tagname.'</div>';
+							}
+						}
+					}
+					if($categoryName == "dview"){
+						$colors = array("red", "green", "blue", "yellow", "pink", "orange", "black", "white", "grey");
+						echo "<div class=\"item\">";
+						foreach ( $tags as $tag ) {
+							$tagname = $tag->name;
+							if(in_array($tagname, $colors)){
+								echo "<a class=\"ui empty circular label ".$tagname." \"></a>";
+							}
+						}
+						echo "</div>";
+					}
+				}
+			?>
 		</div>
+		
 		<?php 
 			the_title( sprintf( '<a class="header" href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a>' );
 			if( $dsignsomething_is_single ) : the_content("<div></div>"); endif;
@@ -52,6 +79,31 @@ else :
 					<?php echo get_the_category()[0]->name; ?>
 				</div>
 			</div>
+			<?php
+				$categoryName = get_the_category()[0]->name;
+				$tags = get_the_tags();
+				if(is_array($tags)){
+					if($categoryName == "dwell"){
+						foreach ( $tags as $tag ) {
+							$tagname = $tag->name;
+							if( $tagname == "international" || $tagname == "Thai"){
+								echo "<div class=\"item\">".$tagname.'</div>';
+							}
+						}
+					}
+					if($categoryName == "dview"){
+						$colors = array("red", "green", "blue", "yellow", "pink", "orange", "black", "white", "grey");
+						echo "<div class=\"item\">";
+						foreach ( $tags as $tag ) {
+							$tagname = $tag->name;
+							if(in_array($tagname, $colors)){
+								echo "<a class=\"ui empty circular label ".$tagname." \"></a>";
+							}
+						}
+						echo "</div>";
+					}
+				}
+			?>
 		</div>
 		<?php 
 			the_title( sprintf( '<a class="header" href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a>' );

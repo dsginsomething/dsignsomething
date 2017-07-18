@@ -1,24 +1,24 @@
 <?php
 
 function dsignsomething_scripts_styles() {
-    // Add style.css
-    wp_enqueue_style( 'style', get_stylesheet_uri() );
+	// Add style.css
+	wp_enqueue_style( 'style', get_stylesheet_uri() );
 
 	// Load init function
 	wp_enqueue_script( 'script', get_template_directory_uri() . '/js/functions.js', array( 'jquery' ));
 
-    // Add semantic-ui style
-    wp_enqueue_style( 'semantic', get_template_directory_uri() . '/custom-semantic/semantic.min.css' );
+	// Add semantic-ui style
+	wp_enqueue_style( 'semantic', get_template_directory_uri() . '/custom-semantic/semantic.min.css' );
 
-    // Load semantic-ui script
-    wp_enqueue_script( 'semantic', get_template_directory_uri() . '/custom-semantic/semantic.min.js', array( 'jquery' ));
+	// Load semantic-ui script
+	wp_enqueue_script( 'semantic', get_template_directory_uri() . '/custom-semantic/semantic.min.js', array( 'jquery' ));
 
 	wp_enqueue_style( 'owlcss', get_template_directory_uri().'/styles/owlcarousel/owl.carousel.min.css');
 	
 	wp_enqueue_style( 'owltheme', get_template_directory_uri().'/styles/owlcarousel/owl.theme.default.min.css');
 
 	wp_enqueue_script( 'owljs', get_template_directory_uri().'/js/owlcarousel/owl.carousel.min.js', array( 'jquery' ));
-	
+
 }
 
 add_action( 'wp_enqueue_scripts', 'dsignsomething_scripts_styles' );

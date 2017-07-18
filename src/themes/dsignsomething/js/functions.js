@@ -1,5 +1,31 @@
 jQuery(document).ready(function($) {
   $('.ui.embed').embed();
+  
+  const homepageHilight = $('.homepage-owl')
+  homepageHilight.owlCarousel({
+    loop: true,
+    margin: 0,
+    nav: false,
+    autoplay: false,
+    autoplayTimeout: 8000,
+    autoplayHoverPause: true,
+    dots: false,
+    merge:true,
+    stageOuterClass: "stage-outer",
+    navClass: ["owl-home-prev", "owl-home-next"],
+    responsive:{
+      0:{
+          items: 1
+      }
+    }
+  });
+  $('.homepage-control .next').on('click', function () {
+    homepageHilight.trigger('next.owl.carousel')
+  })
+  $('.homepage-control .prev').on('click', function () {
+    homepageHilight.trigger('prev.owl.carousel')
+  })
+
   $(".dview-carousel").owlCarousel({
     loop: true,
     center: true,

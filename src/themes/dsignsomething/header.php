@@ -49,22 +49,18 @@
                                         </button>
                                     </div>
                                 </div>
-                                <div class="three wide column">
-                                    <button class="ui circular facebook icon button social">
-                                        <i class="facebook f icon"></i>
-                                    </button>
-                                    <button class="ui circular icon button social">
-                                        <i class="instagram icon"></i>
-                                    </button>
-                                </div>
-                                <div class="four wide column">
-                                    <?php get_search_form(); ?>
-                                </div>
-                                <div class="four wide column right aligned">
-                                    <a class="ui basic button" href="wp-login.php">
-                                        SIGN IN
-                                        <?php do_action('oa_social_login'); ?>
-                                    </a>
+                                <div class="ui divider r-margin"></div>
+                                <div class="row">
+                                    <?php 
+                                    wp_nav_menu( array(
+                                        'menu' => 'main-menu',
+                                        'container_class' => 'ui text menu top-menu',
+                                        'menu_class' => 'item',
+                                        'items_wrap' => '%3$s',
+                                        'theme_location' => 'header-menu',
+                                        'walker' => new Dsignsomething_Walker_Main_Menu()
+                                    )); 
+                                    ?>
                                 </div>
                             </div>
                         </div>

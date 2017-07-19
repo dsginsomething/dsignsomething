@@ -15,8 +15,8 @@
 							</div>
 						</div>
 						<div class="box">
-							<div class="title english"><?php the_title(); ?>dddddddddddddddddddddddddd</div>
-							<div class="title thai"><?php the_title(); ?></div>
+							<div class="title english"><?php the_title(); ?></div>
+							<div class="title thai"><?php the_secondary_title(); ?></div>
 							<div class="ui horizontal divided list meta">
 								<div class="item">
 									<?php echo strtoupper(get_post_time('M Y, d', true)); ?>

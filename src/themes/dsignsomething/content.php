@@ -8,7 +8,7 @@
 							<div class="ui text container" style="padding-top: 8rem; font-size: 150%;">
 								<h1 class="ui inverted header"><?php the_title(); ?></h1>
 								<div class="ui divider inverted"></div>
-								<h1 class="ui header inverted lightHeaderThai"><?php the_title(); ?></h1>
+								<h1 class="ui header inverted lightHeaderThai"><?php the_secondary_title(); ?></h1>
 								<button class="ui inverted button large">
 									<i class="ui icon camera retro"></i>VIEW ALL 23 PHOTOS
 								</button>

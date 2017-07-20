@@ -40,14 +40,11 @@ function dsignsomething_image($url, $height) {
 // Get Image from media library
 function get_images_from_media_library() {
 	$img = array(
-			'post_type' => 'attachment',
-			'post_mime_type' =>'image',
-			'post_status' => 'inherit',
-			'posts_per_page' => 10,
-			'orderby' => 'rand'
+		'post_type' => 'attachment',
+		'numberposts' => -1,
 	);
-	$query_images = new WP_Query( $img );
-	return $query_images->posts;
+	$query_images = get_posts( $img );
+	return $query_images;
 }
 
 // Custom Content for Home Page

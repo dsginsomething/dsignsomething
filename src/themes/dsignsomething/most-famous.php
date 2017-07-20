@@ -6,8 +6,8 @@
   <div class="images most-famous owl-carousel owl-theme">
     <?php
       $most_famous_posts = get_images_from_media_library();
-      foreach($most_famous_posts as $post) {
-        echo '<a class="item" href="'.get_permalink($post).'" alt=""><div style="background-image: url(' . $post->guid . ');"></div></a>';
+      foreach($most_famous_posts as $most_famous_post) {
+        echo '<a class="item" href="'.get_permalink($most_famous_post->post_parent).'" alt=""><div style="background-image: url('.$most_famous_post->guid.');"></div></a>';
       }
     ?>
   </div>

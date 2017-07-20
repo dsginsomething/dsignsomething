@@ -1,5 +1,5 @@
 <div class="row">
-  <form role="search" action="<?php echo get_permalink(); ?>" method="get" id="searchform" class="#searchform ui form">
+  <form role="search" action="./" method="get" id="searchform" class="#searchform ui form">
     <div class="fields">
       <div class="field">
         <button type="submit" name="tags" value="all" class="huge ui icon button circular custom grey">

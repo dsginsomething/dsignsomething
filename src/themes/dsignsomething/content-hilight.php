@@ -2,7 +2,11 @@
 	<div class="content">
 		<div class="title">
 			<?php the_title( sprintf( '<a class="eng" href="%s">', esc_url( get_permalink() ) ), '</a>' ); ?>
-			<div class="thai"><?php the_secondary_title(); ?></div>
+			<div class="thai">
+				<a class="eng" href="<?php echo get_permalink(); ?>">
+					<?php the_secondary_title(); ?>
+				</a>
+			</div>
 		</div>
 		<div class="detail">
 			<div class="date">

@@ -1,5 +1,5 @@
 <div class="row">
-  <form role="search" action="<?php echo  get_permalink(); ?>" method="get" id="searchform" class="#searchform ui form">
+  <form role="search" action="./" method="get" id="searchform" class="#searchform ui form">
     <div class="fields">
       <div class="one wide field">
         <button type="submit" name="tag" value="" class="ui button basic" style="padding-left: 0.4rem !important; padding-right: 0.4rem !important;">ALL</button>
@@ -8,14 +8,13 @@
         <div class="owl-carousel dsigner-carousel owl-theme">
           <?php
             $lang = $_GET["lang"];
-            $tag = $_GET["tag"];
+            $tag = $_GET["keyword"];
             $x = 0;
             $filterEN = array( "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z");
             $filterTH = array( "ก" ,"ข","ฃ","ค","ฅ","ฆ","ง","จ","ฉ","ช","ซ","ฌ","ญ","ฎ","ฏ","ฐ","ฑ","ฒ","ณ","ด","ต","ถ","ท","ธ","น","บ","ป","ผ","ฝ","พ","ฟ","ภ","ม","ย","ร","ฤ","ล","ฦ","ว","ศ","ษ","ส","ห","ฬ","อ","ฮ");
-            if($lang == "TH" || in_array($tag, $filterTH ) ){
+            if($lang == "TH" || in_array($tag, $filterTH )){
               $filterEN = $filterTH;
             }
-              
             while($x <= sizeof($filterEN) - 1) {
               echo "<div class=\"item\" style='' ><button type=\"submit\" name=\"keyword\" value=\"".$filterEN[$x]."\" class='ui button inverted'><span style='color: grey !important;'>".$filterEN[$x]."</span></button></div>";
               $x++;
@@ -36,7 +35,7 @@
       </div>
     </div>
   </form>
-  <form role="search" action="<?php echo  get_permalink(); ?>" method="get" id="searchform" class="#searchform ui form">
+  <form role="search" action="./" method="get" id="searchform" class="#searchform ui form">
     <div class="fields">
       <div class="sixteen wide field">
         <div class="ui fluid action input">

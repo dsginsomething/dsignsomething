@@ -1,0 +1,46 @@
+.tg_sort_tr {
+    cursor: grab;
+}
+
+.ui-sortable-helper {
+    cursor: grabbing;
+}
+
+.tg_pointer {
+    cursor: pointer;
+}
+
+.tg_text {
+    cursor: text;
+}
+
+.tg_groups_table {
+    border-collapse: collapse; 
+}
+
+.tg_groups_table td {
+    vertical-align: middle;
+}
+
+.tg_ask_delete {
+    border: solid 2px red !important;
+}
+
+.tg_pager_button, .tg_reload_button {
+    height:30px;
+    padding: 5px 10px;
+}
+
+.tg_pager_button span, .tg_reload_button span {
+    line-height: inherit;
+}
+
+#tg_pager_container {
+    height:50px;
+    margin:5px;
+}
+
+#tg_pager_container_adjuster {
+    position: relative;
+    overflow: hidden;
+}

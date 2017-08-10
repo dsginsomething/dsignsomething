@@ -4,9 +4,6 @@ function dsignsomething_scripts_styles() {
 	// Add style.css
 	wp_enqueue_style( 'style', get_stylesheet_uri() );
 
-	// Load init function
-	wp_enqueue_script( 'script', get_template_directory_uri() . '/js/functions.js', array( 'jquery' ));
-
 	// Add semantic-ui style
 	wp_enqueue_style( 'semantic', get_template_directory_uri() . '/custom-semantic/semantic.min.css' );
 
@@ -18,6 +15,9 @@ function dsignsomething_scripts_styles() {
 	wp_enqueue_style( 'owltheme', get_template_directory_uri().'/styles/owlcarousel/owl.theme.default.min.css');
 
 	wp_enqueue_script( 'owljs', get_template_directory_uri().'/js/owlcarousel/owl.carousel.min.js', array( 'jquery' ));
+
+	// Load init function
+	wp_enqueue_script( 'script', get_template_directory_uri() . '/js/functions.js', array( 'jquery' ));
 
 }
 
@@ -41,7 +41,15 @@ function dsignsomething_image($url, $height) {
 function get_images_from_media_library() {
 	$img = array(
 		'post_type' => 'attachment',
+		// 'meta_key' => 'post_views_count',
+    'orderby' => 'meta_value_num',
 		'numberposts' => -1,
+		'order'=> 'ASC',
+    'date_query' => array(
+			array(
+				'after'  => '30 days ago'
+			),
+    )
 	);
 	$query_images = get_posts( $img );
 	return $query_images;
@@ -55,14 +63,18 @@ function plugin_content_filter($content)
 	if ( is_single() ) :
 		return $content;
 	else :
-		return substr($content, 0, 50);
+		$text = mb_substr($content, 0, 200);
+		$i = mb_strrpos($text, ' ');
+		if ($i !== false)
+				$text = mb_substr($text, 0, $i);
+		return strip_tags($text);
 	endif;
 }
 
 // Custom Logo Theme
 $args = array(
 	'height'        => 94,
-    'uploads'       => true,
+	'uploads'       => true,
 	'default-image' => get_template_directory_uri() . '/images/logo.jpg',
 );
 add_theme_support( 'custom-header', $args );
@@ -81,4 +93,26 @@ include(locate_template('/inc/Dsignsomething_Walker_Main_Menu.php'));
 // Create Nav Menu
 
 dsignsomething_create_nav_menu();
+
+// Clean UP html
+add_filter('tiny_mce_before_init','configure_tinymce');
+
+function configure_tinymce($in) {
+  $in['paste_preprocess'] = "function(plugin, args){
+    // Strip all HTML tags except those we have whitelisted
+    var whitelist = 'p,span,b,strong,i,em,h3,h4,h5,h6,ul,li,ol';
+    var stripped = jQuery('<div>' + args.content + '</div>');
+    var els = stripped.find('*').not(whitelist);
+    for (var i = els.length - 1; i >= 0; i--) {
+      var e = els[i];
+      jQuery(e).replaceWith(e.innerHTML);
+    }
+    // Strip all class and id attributes
+    stripped.find('*').removeAttr('id').removeAttr('class');
+    // Return the clean HTML
+    args.content = stripped.html();
+  }";
+  return $in;
+}
+
 ?>

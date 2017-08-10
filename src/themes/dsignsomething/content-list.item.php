@@ -19,7 +19,6 @@ if( $dsignsomething_is_single_right ) :
 				</div>
 				<div class="item">
 					<?php echo get_the_category()[0]->name; ?>
-					
 				</div>	
 			</div>
 			<?php
@@ -50,7 +49,6 @@ if( $dsignsomething_is_single_right ) :
 				}
 			?>
 		</div>
-		
 		<?php 
 			the_title( sprintf( '<a class="header" href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a>' );
 			if( $dsignsomething_is_single ) : the_content("<div></div>"); endif;

@@ -19,6 +19,22 @@ jQuery(document).ready(function($) {
   $('.most-famous-control .prev').on('click', function () {
     mostFamous.trigger('prev.owl.carousel')
   })
+
+  const interviewOwl = $('.interview-owl')
+  interviewOwl.owlCarousel({
+    loop: true,
+    margin: 0,
+    nav: false,
+    dots: false,
+    items: 1,
+    merge: true,
+  })
+  $('.interview-control .next').on('click', function () {
+    interviewOwl.trigger('next.owl.carousel')
+  })
+  $('.interview-control .prev').on('click', function () {
+    interviewOwl.trigger('prev.owl.carousel')
+  })
   
   const homepageHilight = $('.homepage-owl')
   homepageHilight.owlCarousel({

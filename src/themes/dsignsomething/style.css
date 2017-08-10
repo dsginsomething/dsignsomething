@@ -40,13 +40,13 @@
   background-color: #cccccc !important;
 }
 
-.ui.header.spotlight > .disabled {
+.ui.header > .disabled {
   opacity: 0.45;
 }
 
 /* article homepage */
 .spotlight {
-  font-size: 4rem !important;
+  font-size: 3.5rem !important;
   font-weight: lighter !important;
 }
 
@@ -132,7 +132,11 @@
   overflow: hidden;
 }
 
-a.header:hover {
+a {
+  color: rgba(0, 0, 0, 0.85);
+}
+
+a.header:hover, a:hover {
   color: rgba(0, 0, 0, 0.25);
 }
 
@@ -317,6 +321,11 @@ a.header:hover {
   width: 30%;
 }
 
+.wantsomethingmore .line {
+  border-top: 3px solid;
+  width: 10%;
+}
+
 .most-famous .owl-item .item div {
   height: 80px;
   background-size: cover;
@@ -455,4 +464,115 @@ a.header:hover {
   padding: 40px;
   width: 80%;
   color: #333;
+}
+
+.qa {
+  font-size: 3rem !important;
+  font-weight: lighter !important;
+}
+
+.qa-content {
+  font-size: 2rem !important;
+  font-weight: lighter !important;
+}
+
+.imgOneCloumn {
+  object-fit: cover;
+}
+
+.viewAllBtn {
+  font-size: 2rem !important;
+  padding: 1rem 4rem 1rem 4rem !important;
+}
+
+.ui.bulleted.list .list>.item:before, .ui.bulleted.list>.item:before, ul.ui.list li:before {
+  content: '/' !important;
+}
+
+.header.interview-header {
+  letter-spacing: 0.5rem;
+  font-size: 3.5rem !important;
+  font-weight: 100;
+}
+
+.hr-1 {
+  margin-top: 15px;
+  width: 100%;
+  height: 20px;
+	background: url(./images/hr.png) repeat 0 0;
+  border: 0;
+}
+
+.interview {
+  height: 400px;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+.interview .content {
+  display: flex;
+  flex-direction: column;
+}
+
+.interview .title.thai {
+  color: black;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  overflow: hidden;
+  white-space: normal;
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+}
+
+.interview .title.eng {
+  padding: 15px;
+  font-weight: 600;
+  color: black;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+  position: absolute;
+  bottom: 0;
+  background: white;
+  width: 70%;
+  align-self: center;
+}
+
+.interview .bg {
+  height: 344px;
+  background-size: cover;
+  background-position: center;
+}
+
+.interview-relative {
+  position: relative;
+}
+
+.interview-control {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  height: 344px;
+  pointer-events: none;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+  align-items: center;
+}
+
+.interview-control .next, .interview-control .prev {
+  z-index: 1;
+  width: 60px;
+  height: 60px;
+  background: white;
+  display: flex;
+  align-items: center;
+  pointer-events: auto;
+  cursor: pointer;
 }

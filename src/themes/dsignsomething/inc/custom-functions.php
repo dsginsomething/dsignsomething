@@ -5,10 +5,9 @@ function dsignsomething_right_bar() {
     <div class="column">
       <div class="row">
         <div class="column">
-          <!-- 
-                <div class="ui vertical rectangle test ad" data-text="Advertisement" style="width: 100%; height: 700px; margin-bottom: 20px;"></div>
-            -->
-        <?php if(function_exists('the_ad_placement')) the_ad_placement('rightbar'); ?>
+            <div class="ui vertical rectangle test ad" data-text="Advertisement" style="width: 100%; height: 700px; margin-bottom: 20px;">
+                    <?php if(function_exists('the_ad_placement')) the_ad_placement('rightbar'); ?>
+            </div>
         </div>
       </div>
       <div class="row">

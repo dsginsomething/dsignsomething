@@ -59,6 +59,14 @@
                           $is_show_equal = true;
                           echo "<div class=\"equal width row\">";
                         endif;
+                        //adsvert
+                        if($i == 6) :
+                          if(function_exists('the_ad_placement')) :
+                          echo "<div class=\"ui top banner test ad\" data-text=\"Banner\">";
+                            the_ad_placement('homepage');
+                          echo "</div>";
+                          endif;
+                        endif;
                         switch($i) {
                           case 1:
                           case 2:

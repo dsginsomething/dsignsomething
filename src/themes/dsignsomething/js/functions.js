@@ -35,6 +35,22 @@ jQuery(document).ready(function($) {
   $('.interview-control .prev').on('click', function () {
     interviewOwl.trigger('prev.owl.carousel')
   })
+
+  const qaOwl = $('.qa-owl')
+  qaOwl.owlCarousel({
+    loop: true,
+    margin: 0,
+    nav: false,
+    dots: false,
+    items: 1,
+    merge: true,
+  })
+  $('.qa-control .next').on('click', function () {
+    qaOwl.trigger('next.owl.carousel')
+  })
+  $('.qa-control .prev').on('click', function () {
+    qaOwl.trigger('prev.owl.carousel')
+  })
   
   const homepageHilight = $('.homepage-owl')
   homepageHilight.owlCarousel({

@@ -55,6 +55,23 @@ function get_images_from_media_library() {
 	return $query_images;
 }
 
+// Get DMATERIAL Image from media library
+function get_dmaterial_images() {
+	$img = array(
+		'post_type' => 'attachment',
+		'tax_query' => array(
+			array(
+				'taxonomy' => 'category',
+				'field'    => 'slug',
+				'terms'    => 'dmaterial',
+			),
+		),
+	);
+	$query_images = get_posts( $img );
+	return $query_images;
+}
+
+
 // Custom Content for Home Page
 add_filter("the_content", "plugin_content_filter");
 
@@ -114,5 +131,16 @@ function configure_tinymce($in) {
   }";
   return $in;
 }
+
+function wptp_add_categories_to_attachments() {
+    register_taxonomy_for_object_type( 'category', 'attachment' );
+}
+add_action( 'init' , 'wptp_add_categories_to_attachments' );
+
+// apply tags to attachments
+function wptp_add_tags_to_attachments() {
+    register_taxonomy_for_object_type( 'post_tag', 'attachment' );
+}
+add_action( 'init' , 'wptp_add_tags_to_attachments' );
 
 ?>

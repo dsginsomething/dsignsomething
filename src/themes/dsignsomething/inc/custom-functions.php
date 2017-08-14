@@ -24,21 +24,18 @@ function dsignsomething_right_bar() {
               <div class="nine wide column">
                 <h1 class="ui header qa">Q<span class="disabled">&</span>A</h1>
               </div>
-              <div class="seven wide column right aligned">
-                <i class="big angle left icon"></i>
-                <i class="big angle right icon"></i>
-              </div>
-            </div>
-            <div class="row">
-              <div class="column">
-                <div class="ui image">
-                  <img class="imgOneCloumn" src="https://source.unsplash.com/random/400x200" />
+              <div class="seven wide column right aligned qa-control">
+                <div class="prev">
+                  <i class="big angle left icon"></i>
+                </div>
+                <div class="next">
+                  <i class="big angle right icon"></i>
                 </div>
               </div>
-            </div>
-            <div class="row">
-              <div class="column">
-                <h3 class="ui header">Q&A : รีโนเวท หรือ สร้างใหม่ดี?</h3>
+              <div class="sixteen wide column">
+                <div class="qa-owl owl-carousel owl-theme">
+                  <?php dsignsomething_qa(); ?>
+                </div>
               </div>
             </div>
             <div class="ui divider"></div>
@@ -67,6 +64,34 @@ function dsignsomething_right_bar() {
               </div>
             </div>
           </div>
+          <div class="ui grid">
+            <div class="row">
+              <div class="column dmaterial">
+                <div class="hr-2"></div>
+                <div class="box">
+                  <h1 class="ui header qa">D <span class="disabled">MATERIAL</span></h1>
+                  <div class="content">
+                    หาวัสดุที่ใช่ ใช้ให้ถูกต้องที่นี่
+                  </div>
+                  <div class="divided"></div>
+                  <div class="row">
+                    <?php 
+                      $dmaterials = get_dmaterial_images();
+                      foreach($dmaterials as $dmaterial) {
+                        echo  '<a class="item" href="'.get_permalink($dmaterial->post_parent).'" alt=""><div style="background-image: url('.$dmaterial->guid.');"></div></a>';
+                      } 
+                    ?>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="column center aligned">
+                <button class="ui basic button viewAllBtn">VIEW ALL</button>
+              </div>
+            </div>
+            <div class="ui divider"></div>
+          </div>
           <div class="ui grid aligned wantsomethingmore">
             <div class="row">
               <div class="sixteen wide column">
@@ -80,7 +105,13 @@ function dsignsomething_right_bar() {
                   <?php
                     $tags = tag_groups_cloud( array( 'include' => '1', 'amount' => 10 ), true );
                     foreach ($tags[1]['tags'] as &$tag) {
-                      echo '<a class="item" href="'.$tag['link'].'">'.$tag['slug'].'</a>';
+                      $parseUrl = parse_url($tag['link']);
+                      $url = $parseUrl['scheme'].'://'.$parseUrl['host'];
+                      if($parseUrl['port'] != NULL) {
+                        $url .= ':'.$parseUrl['port'];
+                      }
+                      $url .= '/all'.$parseUrl['path'];
+                      echo '<a class="item" href="'.$url.'">'.$tag['slug'].'</a>';
                     }
                   ?>
                 </div>
@@ -93,6 +124,34 @@ function dsignsomething_right_bar() {
   </div>
 <?php
 }
+
+function dsignsomething_dmaterial() {
+  $wp_query = new WP_Query( array(
+    'post_type' => 'attachment',
+    'category_name' => 'dmaterial',
+    'posts_per_page' => 6
+  ) );
+  if($wp_query->have_posts()) :
+    while($wp_query->have_posts()): $wp_query->the_post();
+      // include(locate_template('content-qa.php', false, false));
+      // echo 
+    endwhile;
+  endif;
+  wp_reset_postdata();
+}
+
+function dsignsomething_qa() {
+  $wp_query = new WP_Query( array(
+    'category_name' => 'qa',
+    'posts_per_page' => 5
+  ) );
+  if($wp_query->have_posts()) :
+    while($wp_query->have_posts()): $wp_query->the_post();
+      include(locate_template('content-qa.php', false, false));
+    endwhile;
+  endif;
+  wp_reset_postdata();
+} 
 
 function dsignsomething_interview() {
   $wp_query = new WP_Query( array(

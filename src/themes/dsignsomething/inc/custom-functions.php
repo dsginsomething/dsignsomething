@@ -105,12 +105,7 @@ function dsignsomething_right_bar() {
                   <?php
                     $tags = tag_groups_cloud( array( 'include' => '1', 'amount' => 10 ), true );
                     foreach ($tags[1]['tags'] as &$tag) {
-                      $parseUrl = parse_url($tag['link']);
-                      $url = $parseUrl['scheme'].'://'.$parseUrl['host'];
-                      if($parseUrl['port'] != NULL) {
-                        $url .= ':'.$parseUrl['port'];
-                      }
-                      $url .= '/all'.$parseUrl['path'];
+                      $url = 'all?tag='.$tag['slug'];
                       echo '<a class="item" href="'.$url.'">'.$tag['slug'].'</a>';
                     }
                   ?>
@@ -256,16 +251,19 @@ function dsignsomething_pagination ($pages = '', $range = 1) {
  
   if ($total_pages > 1){
     $current_page = max(1, get_query_var('paged'));
-
-    $paginations = paginate_links(array(
-      'base'              => get_pagenum_link(1) . '%_%',
-      'format'            => 'page/%#%',
+    $options = array(
+      'base'              => preg_replace('/\?.*/', '', get_pagenum_link(1)) . '%_%',
+      'format'            => '?paged=%#%',
       'prev_text'         => __('PREV'),
 	    'next_text'         => __('NEXT'),
       'type'              => 'array',
       'current'           => $current_page,
       'total'             => $total_pages,
-    ));
+      'add_args'          => array(
+        'tag'             => get_query_var('tag')
+      )
+    );
+    $paginations = paginate_links($options);
     echo "<div class='ui large horizontal link divided list'>";
     foreach ($paginations as &$pagination) {
       if($pagination != strip_tags($pagination, '<span>')) {

@@ -18,7 +18,8 @@
             $paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
             $wp_query = new WP_Query(array(
               'posts_per_page' => 2,
-              'paged' => $paged
+              'paged' => $paged,
+              'tag' => get_query_var( 'tag', '' )
             ));
             $is_show = false;
             while ( $wp_query->have_posts() ) : $wp_query->the_post();
